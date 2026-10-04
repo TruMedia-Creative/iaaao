@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Peach Hardy Music Video — Preliminary Budget Estimate</title>
+  <style>
+    :root {
+      --ink: #181614;
+      --paper: #f4efe5;
+      --paper-2: #e6ddce;
+      --deep-ink: #24211f;
+      --concrete: #a79f93;
+      --muted: #6b6259;
+      --accent: #f04a23;
+      --accent-dark: #a72812;
+      --line: #2b2723;
+      --white: #fffaf0;
+      --warning: #ffd666;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(24,22,20,.055) 1px, transparent 1px) 0 0 / 42px 42px,
+        linear-gradient(rgba(24,22,20,.035) 1px, transparent 1px) 0 0 / 42px 42px,
+        var(--paper);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 22px 0 18px;
+      border-bottom: 4px solid var(--line);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      border: 3px solid var(--line);
+      box-shadow: 5px 5px 0 var(--line);
+      transform: rotate(-4deg);
+    }
+
+    .doc-label {
+      padding: 7px 10px;
+      border: 2px solid var(--line);
+      background: var(--white);
+      box-shadow: 4px 4px 0 var(--line);
+      white-space: nowrap;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.16fr) minmax(310px, .84fr);
+      gap: 20px;
+      padding: 42px 0 26px;
+      min-height: 620px;
+    }
+
+    .hero-copy {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      border: 4px solid var(--line);
+      background: var(--white);
+      box-shadow: 10px 10px 0 var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "PRELIMINARY / ESTIMATE / PLANNING RANGE";
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      bottom: 0;
+      background: var(--accent);
+      color: var(--line);
+      border-top: 4px solid var(--line);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .16em;
+      white-space: nowrap;
+      padding: 10px 18px;
+      overflow: hidden;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin: 24px 24px 0;
+      padding: 7px 10px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: calc(100% - 48px);
+      margin: 22px 24px 16px;
+      font-size: clamp(3rem, 7.4vw, 6.45rem);
+      line-height: .83;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+      font-weight: 1000;
+    }
+
+    .hero-copy p {
+      max-width: calc(100% - 48px);
+      margin: 0 24px 72px;
+      font-size: clamp(1rem, 1.7vw, 1.22rem);
+      color: #3b332d;
+      font-weight: 560;
+    }
+
+    .money-board {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 20px;
+      border: 4px solid var(--line);
+      background: var(--deep-ink);
+      color: var(--white);
+      box-shadow: 10px 10px 0 var(--accent);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .money-board::before {
+      content: "";
+      position: absolute;
+      inset: -20% -15% auto auto;
+      width: 270px;
+      height: 270px;
+      border: 38px solid rgba(240,74,35,.35);
+      border-radius: 50%;
+      transform: rotate(15deg);
+    }
+
+    .money-board > * { position: relative; z-index: 1; }
+
+    .prepared {
+      display: grid;
+      gap: 4px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #d9cbb8;
+      font-weight: 800;
+    }
+
+    .prepared strong {
+      color: var(--white);
+      font-size: 18px;
+      letter-spacing: .02em;
+    }
+
+    .total-stack {
+      align-self: center;
+      border-block: 3px solid rgba(255,250,240,.42);
+      padding: 28px 0 30px;
+    }
+
+    .total-label,
+    .range-label {
+      margin: 0 0 8px;
+      color: #cfc3b3;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .total-number {
+      margin: 0;
+      font-size: clamp(3.6rem, 8vw, 6.6rem);
+      line-height: .88;
+      letter-spacing: -.07em;
+      font-weight: 1000;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .range-number {
+      margin: 0;
+      color: var(--warning);
+      font-size: clamp(1.55rem, 3.8vw, 2.65rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .variation {
+      margin: 0;
+      padding: 14px;
+      background: rgba(255,250,240,.09);
+      border: 2px solid rgba(255,250,240,.28);
+      color: #efe4d2;
+      font-size: 14px;
+    }
+
+    .section {
+      margin: 46px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 22px;
+      align-items: end;
+      padding-bottom: 14px;
+      border-bottom: 4px solid var(--line);
+      margin-bottom: 18px;
+    }
+
+    .section-number {
+      color: var(--accent-dark);
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: .9;
+      font-weight: 1000;
+      letter-spacing: -.06em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4.8vw, 4.2rem);
+      line-height: .92;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+      font-weight: 1000;
+    }
+
+    .subline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .stamp {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 4px 10px;
+      background: var(--accent);
+      border: 2px solid var(--line);
+      color: var(--line);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 950;
+      box-shadow: 4px 4px 0 var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 4px solid var(--line);
+      box-shadow: 8px 8px 0 var(--line);
+      overflow: hidden;
+    }
+
+    caption {
+      text-align: left;
+      padding: 13px 16px;
+      background: var(--line);
+      color: var(--white);
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-bottom: 2px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--paper-2);
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      font-weight: 1000;
+    }
+
+    td.amount,
+    th.amount {
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      font-weight: 850;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tr.subtotal td {
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 1000;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.1fr;
+      gap: 16px;
+    }
+
+    .summary-card {
+      border: 4px solid var(--line);
+      background: var(--white);
+      padding: 18px;
+      box-shadow: 7px 7px 0 var(--line);
+    }
+
+    .summary-card.primary {
+      background: var(--accent);
+      color: var(--line);
+    }
+
+    .summary-card p {
+      margin: 0;
+    }
+
+    .summary-card .label {
+      display: block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 12px;
+      font-weight: 1000;
+    }
+
+    .summary-card .value {
+      display: block;
+      font-size: clamp(1.6rem, 3.6vw, 3.2rem);
+      line-height: .94;
+      letter-spacing: -.055em;
+      font-weight: 1000;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .summary-card.note {
+      background: var(--deep-ink);
+      color: var(--white);
+    }
+
+    .summary-card.note .value {
+      font-size: 1rem;
+      line-height: 1.45;
+      letter-spacing: 0;
+      font-weight: 650;
+    }
+
+    .budget-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .budget-card {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 260px;
+      border: 4px solid var(--line);
+      background: var(--white);
+      box-shadow: 8px 8px 0 var(--line);
+      overflow: hidden;
+    }
+
+    .budget-card.primary { background: var(--accent); }
+
+    .budget-card .bucket-label {
+      margin: 0;
+      padding: 13px 16px;
+      background: var(--line);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .budget-card .bucket-name {
+      margin: 0;
+      padding: 20px 18px 8px;
+      font-size: clamp(1.75rem, 3.5vw, 3.15rem);
+      line-height: .94;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+      font-weight: 1000;
+    }
+
+    .budget-card .bucket-copy {
+      margin: 0;
+      padding: 0 18px 18px;
+      color: #3b332d;
+      font-weight: 620;
+    }
+
+    .budget-card .bucket-amount {
+      margin: 0;
+      padding: 16px 18px 18px;
+      border-top: 4px solid var(--line);
+      font-size: clamp(2.25rem, 5vw, 4.4rem);
+      line-height: .9;
+      letter-spacing: -.065em;
+      font-weight: 1000;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .scope-detail {
+      margin-top: 22px;
+      border: 4px solid var(--line);
+      background: var(--white);
+      box-shadow: 8px 8px 0 var(--line);
+    }
+
+    .scope-detail summary {
+      padding: 16px 18px;
+      cursor: pointer;
+      background: var(--paper-2);
+      color: var(--line);
+      font-weight: 1000;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      list-style-position: inside;
+    }
+
+    .scope-detail summary:focus-visible {
+      outline: 3px solid var(--accent-dark);
+      outline-offset: 4px;
+    }
+
+    .scope-detail ul {
+      columns: 2;
+      column-gap: 34px;
+      margin: 0;
+      padding: 18px 26px 20px 42px;
+      list-style: square;
+    }
+
+    .scope-detail li {
+      break-inside: avoid;
+      padding: 5px 0;
+    }
+
+    .assumption-panel {
+      display: grid;
+      grid-template-columns: minmax(230px, .8fr) minmax(0, 1.2fr);
+      border: 4px solid var(--line);
+      background: var(--white);
+      box-shadow: 8px 8px 0 var(--line);
+    }
+
+    .assumption-callout {
+      background: var(--ink);
+      color: var(--white);
+      padding: 22px;
+      border-right: 4px solid var(--line);
+    }
+
+    .assumption-callout h3 {
+      margin: 0 0 12px;
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+    }
+
+    .assumption-callout p {
+      margin: 0;
+      color: #e0d3c2;
+    }
+
+    .assumption-list {
+      margin: 0;
+      padding: 18px 24px 18px 42px;
+      list-style: square;
+    }
+
+    .assumption-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(24,22,20,.18);
+    }
+
+    .assumption-list li:last-child { border-bottom: 0; }
+
+    .approval-boundary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 4px solid var(--line);
+      background: var(--white);
+      box-shadow: 8px 8px 0 var(--accent);
+      margin-bottom: 70px;
+    }
+
+    .approval-boundary > div {
+      padding: 22px;
+    }
+
+    .approval-boundary > div + div {
+      border-left: 4px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .approval-boundary h2 {
+      font-size: clamp(1.45rem, 3.2vw, 2.8rem);
+      margin-bottom: 12px;
+    }
+
+    .approval-boundary p {
+      margin: 0;
+      max-width: 65ch;
+    }
+
+    .style-note {
+      margin: 38px 0 0;
+      padding: 14px 16px;
+      border-left: 8px solid var(--accent);
+      background: rgba(255,250,240,.72);
+      color: #443b34;
+      font-size: 14px;
+    }
+
+    .print-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border: 3px solid var(--line);
+      background: var(--accent);
+      color: var(--line);
+      box-shadow: 5px 5px 0 var(--line);
+      font-weight: 950;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .print-action:hover,
+    .print-action:focus-visible {
+      background: var(--warning);
+      outline: 3px solid var(--accent-dark);
+      outline-offset: 3px;
+    }
+
+    .print-action:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--line); }
+
+    footer {
+      padding: 22px 0 36px;
+      border-top: 4px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .reveal {
+      animation: blockIn .45s cubic-bezier(.2,.85,.2,1);
+    }
+
+    .reveal:nth-of-type(2) { animation-delay: .05s; }
+    .reveal:nth-of-type(3) { animation-delay: .1s; }
+
+    @keyframes blockIn {
+      from { transform: translateY(8px); }
+      to { transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    @media (max-width: 860px) {
+      .topbar { grid-template-columns: 1fr; }
+      .doc-label { width: fit-content; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .money-board { min-height: 420px; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .summary-grid, .budget-grid { grid-template-columns: 1fr; }
+      .budget-card { min-height: 0; }
+      .scope-detail ul { columns: 1; }
+      .assumption-panel { grid-template-columns: 1fr; }
+      .assumption-callout { border-right: 0; border-bottom: 4px solid var(--line); }
+      .approval-boundary { grid-template-columns: 1fr; }
+      .approval-boundary > div + div { border-left: 0; border-top: 4px solid var(--line); }
+    }
+
+    @media (max-width: 620px) {
+      .page { width: min(100% - 22px, var(--max)); }
+      h1 { margin-inline: 16px; font-size: clamp(2.6rem, 17vw, 4.3rem); }
+      .hero-copy p, .kicker { margin-left: 16px; margin-right: 16px; }
+      table { box-shadow: 5px 5px 0 var(--line); }
+      th, td { padding: 12px 10px; font-size: 14px; }
+      .amount { min-width: 96px; }
+      .section { margin: 36px 0; }
+    }
+
+    @media print {
+      :root { --ink: #000; --paper: #fff; --white: #fff; --line: #000; --accent: #ddd; --paper-2: #f2f2f2; --deep-ink: #fff; --muted: #333; }
+      html, body { background: #fff !important; color: #000 !important; }
+      body { font-size: 11pt; line-height: 1.4; }
+      .page { width: 100%; max-width: none; margin: 0; }
+      .topbar, .section-head, table, .summary-card, .assumption-panel, .approval-boundary, .hero-copy, .money-board, .budget-card, .scope-detail { box-shadow: none !important; }
+      .hero { display: block; min-height: 0; padding: 10px 0 16px; }
+      .hero-copy, .money-board { margin-bottom: 12pt; page-break-inside: avoid; color: #000 !important; background: #fff !important; }
+      .hero-copy::after, .money-board::before, .print-action, .style-note { display: none !important; }
+      h1 { font-size: 38pt; margin: 12pt; letter-spacing: -.04em; }
+      h2 { font-size: 20pt; letter-spacing: -.02em; }
+      .section { margin: 16pt 0; page-break-inside: avoid; }
+      .section-head { padding-bottom: 6pt; margin-bottom: 8pt; }
+      table, .budget-card, .scope-detail { page-break-inside: avoid; }
+      .budget-grid { grid-template-columns: repeat(2, 1fr); gap: 8pt; }
+      .budget-card { min-height: 0; }
+      .budget-card .bucket-label, .budget-card .bucket-amount, .scope-detail summary { background: #f2f2f2 !important; color: #000 !important; }
+      .scope-detail ul { columns: 2; }
+      caption, tr.subtotal td, .assumption-callout, .summary-card.note, .summary-card.primary { background: #f2f2f2 !important; color: #000 !important; }
+      th, td { padding: 7pt 8pt; }
+      .summary-grid { grid-template-columns: repeat(3, 1fr); gap: 8pt; }
+      .approval-boundary { margin-bottom: 16pt; }
+      footer { padding-top: 10pt; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar" aria-label="Document header">
+      <div class="brand-mark">Prepared by TruMedia Creative</div>
+      <div class="doc-label">Preliminary estimate</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <div class="hero-copy reveal">
+          <span class="kicker">Peach Hardy music video</span>
+          <h1 id="title">Preliminary Budget Estimate</h1>
+          <p>This preliminary estimate gives us a clear planning range for the Peach Hardy music-video production while we shape the creative direction together. It is not a fixed bid: the final scope, production plan, and contract terms will be confirmed once the concept, shoot logistics, locations, crew, and production needs are finalized.</p>
+        </div>
+
+        <aside class="money-board reveal" aria-label="Estimate summary">
+          <div class="prepared">
+            <span>Prepared by</span>
+            <strong>TruMedia Creative</strong>
+          </div>
+          <div class="total-stack">
+            <p class="total-label">Current working estimate</p>
+            <p class="total-number">$9,750</p>
+            <p class="range-label" style="margin-top: 26px;">Preliminary project range</p>
+            <p class="range-number">$8,500–$10,000</p>
+          </div>
+          <p class="variation">$8,500–$10,000. As the concept and production plan are finalized, actual cost may vary by approximately ±15%. The range is not a fixed cap.</p>
+        </aside>
+      </section>
+
+      <section class="section reveal" aria-labelledby="budget-glance">
+        <div class="section-head">
+          <div class="section-number">01</div>
+          <h2 id="budget-glance">Budget at a Glance</h2>
+        </div>
+        <p class="subline"><span class="stamp">Current working estimate: $9,750</span> This reflects the current planning approach: $7,750 for TruMedia Creative’s creative and production services, plus a $2,000 production expense allowance.</p>
+        <div class="budget-grid" role="list" aria-label="Budget buckets">
+          <article class="budget-card primary" role="listitem">
+            <p class="bucket-label">Visible budget bucket</p>
+            <h3 class="bucket-name">Creative &amp; Production Services</h3>
+            <p class="bucket-copy">TruMedia Creative’s creative development, production leadership, crew, post-production, finishing, and delivery.</p>
+            <p class="bucket-amount">$7,750</p>
+          </article>
+          <article class="budget-card" role="listitem">
+            <p class="bucket-label">Visible budget bucket</p>
+            <h3 class="bucket-name">Production Expense Allowance</h3>
+            <p class="bucket-copy">A planning allowance for locations, permits, art/props, rentals, meals, transportation, and other production needs confirmed with the concept and logistics.</p>
+            <p class="bucket-amount">$2,000</p>
+          </article>
+        </div>
+        <details class="scope-detail">
+          <summary>What this preliminary estimate covers</summary>
+          <ul>
+            <li>Creative development and up to two band meetings</li>
+            <li>Pre-production and planning</li>
+            <li>Production leadership and primary-camera coverage</li>
+            <li>Up to one additional half shoot day</li>
+            <li>Lighting/grip and second-camera coverage</li>
+            <li>Editing</li>
+            <li>Color, finishing, and delivery</li>
+            <li>Locations and permits</li>
+            <li>Props, set dressing, and art</li>
+            <li>Equipment and specialty rentals</li>
+            <li>Meals, transportation, and miscellaneous production needs</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="section reveal" aria-labelledby="estimated-total">
+        <div class="section-head">
+          <div class="section-number">02</div>
+          <h2 id="estimated-total">Estimated Total</h2>
+        </div>
+        <div class="summary-grid" role="list" aria-label="Financial summary">
+          <div class="summary-card primary" role="listitem">
+            <p><span class="label">Creative &amp; Production Services</span><span class="value">$7,750</span></p>
+          </div>
+          <div class="summary-card" role="listitem">
+            <p><span class="label">Production Expense Allowance</span><span class="value">$2,000</span></p>
+          </div>
+          <div class="summary-card note" role="listitem">
+            <p><span class="label">Planning boundary</span><span class="value">Current working estimate: $9,750. Preliminary project range: $8,500–$10,000. Approximately ±15% planning tolerance.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="assumptions-exclusions">
+        <div class="section-head">
+          <div class="section-number">03</div>
+          <h2 id="assumptions-exclusions">Assumptions &amp; Exclusions</h2>
+        </div>
+        <div class="assumption-panel">
+          <div class="assumption-callout">
+            <h3>What this estimate assumes</h3>
+            <p>This planning estimate is built around the production approach outlined below. It keeps the budget flexible while the creative direction and logistics are being confirmed.</p>
+          </div>
+          <ul class="assumption-list">
+            <li>One full shoot day plus up to one additional half shoot day.</li>
+            <li>Creative development, pre-production, production leadership, lighting/grip and second-camera coverage, editing, color/finishing, and delivery.</li>
+            <li>A $2,000 production expense allowance for locations/permits, art and props, specialty rentals, meals, transportation, and related production needs.</li>
+            <li>Not included: major travel, outside talent, special effects, extensive art builds, or premium locations.</li>
+            <li>Any material change to scope or production expenses requires written approval before spend.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section approval-boundary reveal" aria-labelledby="approval-boundary">
+        <div>
+          <h2 id="approval-boundary">Approval boundary</h2>
+          <p>This is a planning estimate, not a fixed bid. Once we approve the creative direction and production plan, TruMedia Creative will confirm the final scope, budget, and contract terms.</p>
+        </div>
+        <div>
+          <h2>Next confirmation point</h2>
+          <p>Any material change to scope or production expenses will be approved in writing before spend.</p>
+          <button class="print-action" type="button" onclick="window.print()">Print / save PDF</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Peach Hardy Music Video — Preliminary Budget Estimate. Prepared by TruMedia Creative.
+    </footer>
+  </div>
+</body>
+</html>
